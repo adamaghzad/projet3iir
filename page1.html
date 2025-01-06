@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pookies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="pictures/download.png" />
+</head>
+<body>
+    <section id="header">
+        <a href="#"><img src="pictures/Capture.PNG"></a>
+        <div>
+            <ul id="navbar">
+               <li><a class="active" href="page1.html">Home</a></li> 
+               <li><a href="#store">Shop</a></li> 
+               <!-- <li><a href="#characters">characters</a></li>  -->
+               <li><a href="#about">about</a></li> 
+               <li id="authLinks">
+                   <a href="page2.html?form=signup" class="signup-link">Sign Up</a>
+                   <a href="page2.html?form=login" class="login-btn">Login</a>
+                   
+               </li>
+               <a href="admin.html" id="adminLink" style="display: none;">Admin</a>
+               <li id="userControls" style="display: none;">
+                   <span class="user-email"></span>
+                   <a href="#" class="logout-btn">Logout</a>
+               </li>
+               <li class="cart-icon disabled">
+                   <i class="fas fa-shopping-cart"></i>
+                   <span class="cart-count">0</span>
+                   <span class="cart-tooltip">Please login to shop</span>
+               </li>
+            </ul>
+        </div>
+    </section>
+    <section id="hero">
+        <a href="#" class="img1"><img src="pictures/intro_logo.png"></a>
+
+        <!-- <button>  ショップ  </button> -->
+        <div class="platform-buttons">
+            <a target="_blank" href="https://store.playstation.com/ja-jp/product/JP0082-CUSA02517_00-ANDROIDS20030612" class="platform-btn ps4">
+                <img src="pictures/download (3).png" alt="PS4">
+                <span>好評発売中</span>
+                <span class="details">詳細はこちら</span>
+            </a>
+            <a target="_blank" href="https://www.xbox.com/ja-jp/games/store/nier-automata-become-as-gods-edition/bppzvt8bz15n?activetab=pivot:overviewtab" class="platform-btn xbox">
+                <img src="pictures/download (6).png" alt="XBOX ONE">
+                <span>好評発売中</span>
+                <span class="details">詳細はこちら</span>
+            </a>
+            <a target="_blank" href="https://store-jp.nintendo.com/item/software/D70010000045181" class="platform-btn switch">
+                <img src="pictures/download (5).png" alt="Nintendo Switch">
+                <span>好評発売中</span>
+                <span class="details">詳細はこちら</span>
+            </a>
+            <a target="_blank" href="https://store.steampowered.com/agecheck/app/524220/" class="platform-btn steam">
+                <img src="pictures/Steam_icon_logo.svg.png" alt="Steam">
+                <span>好評発売中</span>
+                <span class="details">詳細はこちら</span>
+            </a>
+        </div>
+    </section>
+    <!-- <section id="characters">
+        <div class="character-grid">
+            <div class="character-card">
+                <img src="pics/YoRHa_No.2_Type_B.webp" alt="YoRHa No.2 Type B">
+                <div class="character-name">YoRHa No.2 Type B</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/YoRHa_No.2A.webp" alt="YoRHa Type A No.2">
+                <div class="character-name">YoRHa Type A No.2</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/NR2020_Kaine.webp" alt="Kainé">
+                <div class="character-name">Kainé</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/NR2021_Emil.webp" alt="Emil">
+                <div class="character-name">Emil</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/YoRHa_No.9_Type_S.webp" alt="9s">
+                <div class="character-name">YoRHa No.9 Type S</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/NR2020_Nier_Young.webp" alt="Nier (Brother)">
+                <div class="character-name">Nier (Brother)</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/SentinelSavior.webp" alt="YoRHa No.10 Type H">
+                <div class="character-name">YoRHa No.10 Type H</div>
+            </div>
+            <div class="character-card">
+                <img src="pics/NR2021_Devola.webp" alt="Devola">
+                <div class="character-name">Devola</div>
+            </div>
+        </div>
+    </section> -->
+    <section id="about">
+        <h1>GAME</h1>
+        <div class="about-content">
+            <h2>Game Overview</h2>
+            
+            <div class="about-text">
+                <p>NieR:Automata is an action RPG developed by PlatinumGames and produced by Square Enix.</p>
+                
+                <p>The story takes place in a distant future where humanity has retreated to the moon in the face of overwhelming forces from mechanical life forms.</p>
+                
+                <p>Players take on the role of 2B, a member of the newly organized android squad "YoRHa", engaging in fierce battles for the survival of Earth.</p>
+                
+                <p>More than just entertainment, experience a smooth 60fps open world that tells a story filled with various emotions.</p>
+            </div>
+        </div>
+    </section>
+    <section id="store">
+        <h2>Fan nier automata store</h2>
+        <div class="store-grid">
+            <!-- Répéter cette structure pour chaque produit -->
+            <div class="product-card">
+                <img src="./figures/f1.jpg" alt="2B Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata Ver.1.1a - 2B</h3>
+                    <p class="price">$120.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Treizième produit -->
+            <div class="product-card">
+                <img src="./figures/p.jpg" alt="A2 Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - A2 Deluxe Edition</h3>
+                    <p class="price">$150.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Quatorzième produit -->
+            <div class="product-card">
+                <img src="./figures/p1.jpg" alt="9S Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - 9S Special Edition</h3>
+                    <p class="price">$140.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Quinzième produit -->
+            <div class="product-card">
+                <img src="./figures/p2.jpg" alt="Emil Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Emil Collector's Edition</h3>
+                    <p class="price">$160.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Seizième produit -->
+            <div class="product-card">
+                <img src="./figures/p3.jpg" alt="Pod Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Pod 042 Limited Edition</h3>
+                    <p class="price">$90.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Dix-septième produit -->
+            <div class="product-card">
+                <img src="./figures/p4.jpg" alt="Devola & Popola Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Devola & Popola Dual Pack</h3>
+                    <p class="price">$180.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Dix-huitième produit -->
+            <div class="product-card">
+                <img src="./figures/f1.jpg" alt="Commander Action Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Commander Premium Edition</h3>
+                    <p class="price">$170.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Dix-neuvième produit -->
+            <div class="product-card">
+                <img src="./figures/f2.jpg" alt="YoRHa Type A No.2">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - YoRHa Type A No.2 Battle Version</h3>
+                    <p class="price">$165.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Vingtième produit -->
+            <div class="product-card">
+                <img src="./figures/f3.jpg" alt="Pascal Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Pascal Limited Edition</h3>
+                    <p class="price">$145.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Vingt-et-unième produit -->
+            <div class="product-card">
+                <img src="./figures/f4.jpg" alt="Adam & Eve Figures">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Adam & Eve Dual Pack Special</h3>
+                    <p class="price">$190.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Vingt-deuxième produit -->
+            <div class="product-card">
+                <img src="./figures/f5.jpg" alt="Operator 6O Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Operator 6O Collector's Edition</h3>
+                    <p class="price">$135.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+
+            <!-- Vingt-troisième produit -->
+            <div class="product-card">
+                <img src="./figures/f7.jpg" alt="Red Girl Figure">
+                <div class="product-info">
+                    <h3>TAMASHII NATIONS - NieR:Automata - Red Girl Premium Edition</h3>
+                    <p class="price">$155.00</p>
+                    <p class="stock">In Stock</p>
+                    <div class="product-options">
+                        <select class="size-select" required>
+                            <option value="">Select Size</option>
+                            <option value="S">Small</option>
+                            <option value="M">Medium</option>
+                            <option value="L">Large</option>
+                        </select>
+                    </div>
+                    <button class="buy-button">PRE-ORDER NOW</button>
+                </div>
+            </div>
+        
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">CONTACT</a>
+            <span class="separator">|</span>
+            <a href="#">PRIVACY POLICY</a>
+            <span class="separator">|</span>
+            <a href="#">ANIPLEX</a>
+        </div>
+        <div class="footer-text">
+            <p>このサイトに記載されている一文章・図版・写等を、手段や態を問わず・複製・転載することを禁じます。</p>
+            <p>©SQUARE ENIX/人類会議</p>
+        </div>
+    </footer>
+    <div class="cart-sidebar">
+        <div class="cart-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart">&times;</button>
+        </div>
+        <div class="cart-items">
+            <!-- Les articles seront ajoutés ici dynamiquement -->
+        </div>
+        <div class="cart-total">
+            <p>Total: <span class="total-amount">$0.00</span></p>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

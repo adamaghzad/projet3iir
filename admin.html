@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="admin-nav">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-user-info">
+                <span id="adminEmail"></span>
+                <button id="adminLogout">Logout</button>
+            </div>
+        </nav>
+        
+        <div class="admin-content">
+            <div class="admin-sidebar">
+                <button class="tab-button active" data-tab="orders">Orders</button>
+                <button class="tab-button" data-tab="users">Users</button>
+            </div>
+            
+            <div class="admin-main">
+                <div id="orders" class="tab-content active">
+                    <h2>Orders Management</h2>
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <h3>Total Orders</h3>
+                            <div id="totalOrders">0</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Total Revenue</h3>
+                            <div id="totalRevenue">$0.00</div>
+                        </div>
+                        <div class="stat-card">
+                            <h3>Today's Orders</h3>
+                            <div id="todayOrders">0</div>
+                        </div>
+                    </div>
+
+                    <div class="orders-section">
+                        <div class="orders-header">
+                            <div class="search-filter">
+                                <input type="text" id="search-order" placeholder="Search orders...">
+                                <select id="filter-status">
+                                    <option value="all">All Status</option>
+                                    <option value="pending">Pending</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="shipped">Shipped</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                            <div class="actions">
+                                <button onclick="exportOrders()" class="btn btn-export">
+                                    <i class="fas fa-download"></i> Export
+                                </button>
+                                <button onclick="bulkDeleteOrders()" class="btn btn-delete">
+                                    <i class="fas fa-trash"></i> Delete Completed
+                                </button>
+                            </div>
+                        </div>
+                        <table id="ordersTable">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer</th>
+                                    <th>Date</th>
+                                    <th>Total</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="orders-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div id="users" class="tab-content">
+                    <h2>Users Management</h2>
+                    <div class="users-header">
+                        <div class="search-filter">
+                            <input type="text" id="search-users" placeholder="Search users...">
+                            <select id="filter-role">
+                                <option value="all">All Roles</option>
+                                <option value="admin">Admin</option>
+                                <option value="user">User</option>
+                            </select>
+                        </div>
+                    </div>
+                    <table id="usersTable">
+                        <thead>
+                            <tr>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Created At</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <dialog id="order-details-modal" class="modal">
+        <div class="modal-header">
+            <h2>Order Details</h2>
+            <button class="close-modal">&times;</button>
+        </div>
+        <div id="order-details-content" class="modal-body"></div>
+        <div class="modal-footer">
+            <select id="update-status">
+                <option value="pending">Pending</option>
+                <option value="processing">Processing</option>
+                <option value="shipped">Shipped</option>
+                <option value="delivered">Delivered</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+            <button class="btn btn-update-status">Update Status</button>
+            <button class="btn btn-close">Close</button>
+        </div>
+    </dialog>
+
+    <script src="admin.js"></script>
+</body>
+</html> 

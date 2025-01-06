@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Pookies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="pictures/download.png" />
+</head>
+<body>
+    <section id="header">
+        <a href="page1.html"><img src="pictures/Capture.PNG"></a>
+        <div>
+            <ul id="navbar">
+               <li><a href="page1.html">Home</a></li> 
+               <li><a href="page1.html#store">Shop</a></li> 
+               <li><a href="page1.html#characters">characters</a></li> 
+               <li><a href="page1.html#about">about</a></li> 
+               <li><a class="active" href="page2.html">Sign Up</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="signup-section">
+        <div class="auth-container-page">
+            <div class="auth-box" id="signupBox">
+                <h2>Create Account</h2>
+                <form id="signupForm">
+                    <div class="form-group">
+                        <label for="email" aria-label="Email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm Password</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                    <button type="submit" class="signup-btn" id="signupBtn">Sign Up</button>
+                    <div id="loading" style="display:none;">Loading...</div>
+                </form>
+                <p class="login-text">Already have an account? <a href="#" class="login-link">Login here</a></p>
+            </div>
+
+            <div class="auth-box" id="loginBox" style="display: none;">
+                <h2>Welcome Back!</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword" aria-label="Password">Password</label>
+                        <input type="password" id="loginPassword" required>
+                    </div>
+                    <button type="submit" class="login-btn">Login</button>
+                    <div class="forgot-password">
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+                </form>
+                <p class="signup-text">New to Pookies? <a href="#" class="signup-link">Sign Up here</a></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+        <div class="social-media">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

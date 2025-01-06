@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Pookies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="pictures/download.png" />
+</head>
+<style>
+    /* Styles généraux pour le texte */
+body {
+    color: #333; /* Couleur de texte par défaut légèrement plus douce que le noir pur */
+}
+
+/* Styles pour les titres */
+h1, h2, h3, h4, h5, h6 {
+    color: #222;
+    font-weight: 600;
+}
+
+/* Styles pour le panier */
+.cart-item h4 {
+    color: #222;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.cart-item-info label {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.cart-item-price {
+    color: #222;
+    font-weight: 600;
+}
+
+.total-amount {
+    color: #222;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Styles pour le checkout */
+.checkout-container h2 {
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    color: #444;
+    font-weight: 500;
+}
+
+.checkout-item h4 {
+    color: #222;
+    margin-bottom: 5px;
+}
+
+.checkout-item p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.final-total {
+    color: #222;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Styles pour les messages et notifications */
+.add-to-cart-notification {
+    color: rgb(27, 1, 1);
+    font-weight: 500;
+}
+
+/* Styles pour les boutons */
+.remove-item {
+    color: rgb(12, 1, 1);
+    font-weight: 500;
+}
+
+.checkout-btn {
+    color: white;
+    font-weight: 600;
+}
+
+/* Styles pour les sélecteurs et inputs */
+select, input {
+    color: #333;
+}
+
+select option {
+    color: #333;
+}
+
+/* Styles pour le placeholder */
+input::placeholder {
+    color: #090101;
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+    color: #ff4444;
+    font-size: 0.9rem;
+}
+
+/* Styles pour les liens */
+a {
+    color: #222;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #4CAF50;
+}
+</style>
+<body>
+    <section id="header">
+        <a href="page1.html"><img src="pictures/Capture.PNG"></a>
+        <div>
+            <ul id="navbar">
+               <li><a href="page1.html">Home</a></li> 
+               <li><a href="page1.html#store">Shop</a></li> 
+               <li><a href="page1.html#characters">characters</a></li> 
+               <li><a href="page1.html#about">about</a></li> 
+            </ul>
+        </div>
+    </section>
+
+    <section id="checkout-section">
+        <div class="checkout-container">
+            <div class="order-summary">
+                <h2>Order Summary</h2>
+                <div class="checkout-items"></div>
+                <div class="checkout-total">
+                    <h3>Total: <span class="final-total">$0.00</span></h3>
+                </div>
+            </div>
+
+            <div class="checkout-form">
+                <h2>Shipping Information</h2>
+                <form id="checkoutForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <input type="text" id="address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="number">Number</label>
+                        <input type="number" id="number" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">ZIP Code</label>
+                            <input type="text" id="zipCode" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <select id="country" required>
+                            <option value="">Select Country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="GB">United Kingdom</option>
+                            <option value="FR">France</option>
+                            <!-- Add more countries as needed -->
+                        </select>
+                    </div>
+
+                    <button type="submit" class="place-order-btn">Place Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Contact Us</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Vérifier si l'utilisateur est connecté
+    if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'page2.html';
+        return;
+    }
+
+    // Récupérer le panier
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const checkoutItems = document.querySelector('.checkout-items');
+    const finalTotal = document.querySelector('.final-total');
+
+    // Afficher les articles
+    let total = 0;
+    cart.forEach(item => {
+        const itemTotal = parseFloat(item.price) * item.quantity;
+        total += itemTotal;
+        
+        checkoutItems.innerHTML += `
+            <div class="checkout-item">
+                <img src="${item.image}" alt="${item.name}">
+                <div class="item-details">
+                    <h4>${item.name}</h4>
+                    <p>Size: ${item.size}</p>
+                    <p>Quantity: ${item.quantity}</p>
+                    <p class="item-total">$${(parseFloat(item.price) * item.quantity).toFixed(2)}</p>
+                </div>
+            </div>
+        `;
+    });
+
+    finalTotal.textContent = `$${total.toFixed(2)}`;
+
+    // Gestion du formulaire
+    const checkoutForm = document.getElementById('checkoutForm');
+    
+     checkoutForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Simulation de traitement de commande
+        const loadingBtn = document.querySelector('.place-order-btn');
+        loadingBtn.textContent = 'Processing...';
+        loadingBtn.disabled = true;
+
+        setTimeout(() => {
+            // Vider le panier
+            localStorage.removeItem('cart');
+            
+            // Rediriger vers une page de confirmation
+            alert('Order placed successfully!');
+            window.location.href = 'page1.html';
+        }, 2000);
+    });
+});
+    </script>
+    <script src="checkout.js"></script>
+</body>
+</html>
