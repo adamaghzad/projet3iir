@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('userRole', newUser.role);
 
             alert('Account created successfully!');
-            window.location.href = 'page1.html';
+            window.location.href = 'index.html';
         });
     }
 
@@ -142,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('isAdmin', 'true');
                 
                 alert('Admin login successful!');
-                window.location.href = 'page1.html';
+                window.location.href = 'index.html';
                 return;
             }
 
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 localStorage.setItem('userRole', user.role || 'user');
                 
                 alert('Login successful!');
-                window.location.href = 'page1.html';
+                window.location.href = 'index.html';
             } else {
                 alert('Invalid email or password!');
             }
@@ -378,7 +378,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (window.location.pathname.includes('admin.html')) {
             if (!isAdmin()) {
                 alert('Access denied. Admin privileges required.');
-                window.location.href = 'page1.html';
+                window.location.href = 'index.html';
             }
         }
     }

@@ -306,7 +306,7 @@ function deleteOrder(orderId) {
 function handleLogout() {
     if (confirm('Are you sure you want to logout?')) {
         localStorage.removeItem('currentUser');
-        window.location.href = 'page1.html';
+        window.location.href = 'index.html';
     }
 }
 

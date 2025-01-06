@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             A confirmation email has been sent to ${orderInfo.customer.email}
                         </p>
                         <div class="confirmation-buttons">
-                            <button onclick="window.location.href='page1.html'" class="continue-shopping">
+                            <button onclick="window.location.href='index.html'" class="continue-shopping">
                                 Continue Shopping
                             </button>
                         </div>
